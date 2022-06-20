@@ -1,0 +1,6 @@
+C:\Users\MARIANA\Development\inv3\inv3_backend.Solution\SQLServerDatabase\bin\Debug\SQLServerDatabase.dacpac
+C:\Users\MARIANA\Development\inv3\inv3_backend.Solution\SQLServerDatabase\bin\Debug\SQLServerDatabase.dll
+C:\Users\MARIANA\Development\inv3\inv3_backend.Solution\SQLServerDatabase\bin\Debug\SQLServerDatabase.pdb
+C:\Users\MARIANA\Development\inv3\inv3_backend.Solution\SQLServerDatabase\obj\Debug\SQLServerDatabase.sqlproj.AssemblyReference.cache
+C:\Users\MARIANA\Development\inv3\inv3_backend.Solution\SQLServerDatabase\obj\Debug\SQLServerDatabase.dll
+C:\Users\MARIANA\Development\inv3\inv3_backend.Solution\SQLServerDatabase\obj\Debug\SQLServerDatabase.pdb

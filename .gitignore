@@ -1,0 +1,25 @@
+# Backend temp files
+
+inv3_backend.Solution/.vs
+inv3_backend.Solution/Core/bin
+inv3_backend.Solution/Core/obj
+inv3_backend.Solution/DataAccess/bin
+inv3_backend.Solution/DataAccess/obj
+inv3_backend.Solution/DataAccess/obj
+inv3_backend.Solution/logs
+inv3_backend.Solution/SQLServerDatabase/bin
+inv3_backend.Solution/DataAccess/obj
+inv3_backend.Solution/WebApi/bin
+inv3_backend.Solution/WebApi/obj
+
+# Config files
+inv3_backend.Solution/WebApi/.config
+inv3_backend.Solution/WebApi/Properties
+inv3_backend.Solution/WebApi/appsettings.Development.json
+inv3_backend.Solution/WebApi/appsettings.json
+inv3_backend.Solution/inv3_backend.Solution.sln
+
+# SQL Project Miscellaneus files
+inv3_backend.Solution/SQLServerDatabase/SQLServerDatabase.dbmdl
+inv3_backend.Solution/SQLServerDatabase/SQLServerDatabase.jfm
+inv3_backend.Solution/SQLServerDatabase/Registros de importación de esquemas/
