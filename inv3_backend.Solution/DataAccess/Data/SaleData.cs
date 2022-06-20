@@ -1,4 +1,6 @@
-﻿using Core.Models;
+﻿using System.Data;
+using Core.Models;
+using Dapper;
 using DataAccess.DbAccess;
 
 namespace DataAccess.Data;
@@ -21,16 +23,19 @@ public class SaleData : ISaleData
         return await _database.LoadData<Sale, dynamic>(storedProcedure: "dbo.Sales_GetOne", parameters: new { IdSale });
     }
 
-    public Task CreateSale(Sale sale)
+    public async Task<Sale> CreateSale(Sale sale)
     {
-        return _database.SaveData(storedProcedure: "dbo.Sales_Create", parameters: new
-        {
-            sale.DateSale,
-            sale.PayMethod,
-            sale.Client.IdClient,
-            sale.Income,
-            sale.Product.IdProduct
-        });
+        var p = new DynamicParameters();
+        p.Add("@DateSale", sale.DateSale);
+        p.Add("@PayMethod", sale.PayMethod);
+        p.Add("@IdClient", sale.Client.IdClient);
+        p.Add("@Income", sale.Income);
+        p.Add("@IdProduct", sale.Product.IdProduct);
+        p.Add("@IdSale", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+        await _database.SaveData(storedProcedure: "dbo.spProducts_Create", parameters: p);
+
+        sale.IdSale = p.Get<int>("@IdSale");
+        return sale;
     }
 
     public Task UpdateSale(Sale sale)

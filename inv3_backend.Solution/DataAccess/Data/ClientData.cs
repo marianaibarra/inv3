@@ -1,4 +1,6 @@
-﻿using Core.Models;
+﻿using System.Data;
+using Core.Models;
+using Dapper;
 using DataAccess.DbAccess;
 
 namespace DataAccess.Data;
@@ -22,16 +24,19 @@ public class ClientData : IClientData
         return await _database.LoadData<Client, dynamic>(storedProcedure: "dbo.Clients_GetOne", parameters: new { IdClient });
     }
 
-    public Task CreateClient(Client client)
+    public async Task<Client> CreateClient(Client client)
     {
-        return _database.SaveData(storedProcedure: "dbo.Clients_Create", parameters: new
-        {
-            client.NameClient,
-            client.LastName,
-            client.EmailClient,
-            client.PhoneClient,
-            client.AddressClient
-        });
+        var p = new DynamicParameters();
+        p.Add("@NameClient", client.NameClient);
+        p.Add("@LastName", client.LastName);
+        p.Add("@EmailClient", client.EmailClient);
+        p.Add("@PhoneClient", client.PhoneClient);
+        p.Add("@AddressClient", client.AddressClient);
+        p.Add("@IdClient", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+        await _database.SaveData(storedProcedure: "dbo.Clients_Create", parameters: p);
+
+        client.IdClient = p.Get<int>("@IdClient");
+        return client;
     }
 
     public Task UpdateClient(Client client)

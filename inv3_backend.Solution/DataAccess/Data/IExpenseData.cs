@@ -4,7 +4,7 @@ namespace DataAccess.Data
 {
     public interface IExpenseData
     {
-        Task CreateExpense(Expense expense);
+        Task<Expense> CreateExpense(Expense expense);
         Task DeleteExpense(int IdExpense);
         Task<IEnumerable<Expense>> GetExpenses();
         Task<IEnumerable<Expense>> GetOneExpense(int IdExpense);

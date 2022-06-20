@@ -1,4 +1,6 @@
-﻿using Core.Models;
+﻿using System.Data;
+using Core.Models;
+using Dapper;
 using DataAccess.DbAccess;
 
 namespace DataAccess.Data;
@@ -20,18 +22,19 @@ public class OwnerData : IOwnerData
     {
         return await _database.LoadData<Owner, dynamic>(storedProcedure: "dbo.Owners_GetOne", parameters: new { IdOwner });
     }
-
-    public Task CreateOwner(Owner owner)
+    public async Task<Owner> CreateOwner(Owner owner)
     {
-        return _database.SaveData(storedProcedure: "dbo.Owners_Create", parameters: new
-        {
-            owner.Username,
-            owner.NameOwner,
-            owner.LastNameOwner,
-            owner.Email,
-            owner.Phone,
-            owner.Business.IdBussiness
-        });
+        var p = new DynamicParameters();
+        p.Add("@Username", owner.Username);
+        p.Add("@NameOwner", owner.NameOwner);
+        p.Add("@LastNameOwner", owner.LastNameOwner);
+        p.Add("@Email", owner.Email);
+        p.Add("@Phone", owner.Phone);
+        p.Add("@IdOwner", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+        await _database.SaveData(storedProcedure: "dbo.spProducts_Create", parameters: p);
+
+        owner.IdOwner = p.Get<int>("@IdOwner");
+        return owner;
     }
 
     public Task UpdateOwner(Owner owner)

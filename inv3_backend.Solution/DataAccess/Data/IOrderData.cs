@@ -4,7 +4,7 @@ namespace DataAccess.Data
 {
     public interface IOrderData
     {
-        Task CreateOrder(Order order);
+        Task<Order> CreateOrder(Order order);
         Task DeleteOrder(int IdOrder);
         Task<IEnumerable<Order>> GetOneOrder(int IdOrder);
         Task<IEnumerable<Order>> GetOrders();

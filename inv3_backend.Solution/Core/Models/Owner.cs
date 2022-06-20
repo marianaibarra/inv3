@@ -22,7 +22,6 @@ public class Owner
     public string? NameOwner { get; set; }
     [Required]
     public string? LastNameOwner { get; set; }
-    public Bussiness? Business { get; set; }
     [Required]
     public string? Password { get; set; }
     [Required]

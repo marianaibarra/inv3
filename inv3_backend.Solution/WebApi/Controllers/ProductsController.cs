@@ -8,18 +8,18 @@ namespace inv3_backend.Controllers;
 [Route("api/v1/[controller]")]
 public class ProductsController : ControllerBase
 {
-    private readonly ILogger<ProductsController> _logger;
+    private readonly ILogger<ProductsController> _loggerProduct;
 
     public ProductsController(ILogger<ProductsController> logger)
     {
-        _logger = logger;
+        _loggerProduct = logger;
     }
 
     // GET /products
     [HttpGet]
     public async Task<ActionResult<Product>> GetProducts([FromServices] IProductData db)
     {
-        _logger.LogInformation("Products > GetProducts controller executing...");
+        _loggerProduct.LogInformation("Products > GetProducts controller executing...");
         
         try
         {
@@ -36,7 +36,7 @@ public class ProductsController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<Product>> GetOneProduct([FromRoute] int id, [FromServices] IProductData db)
     {
-        _logger.LogInformation("Products > GetOneProduct controller executing...");
+        _loggerProduct.LogInformation("Products > GetOneProduct controller executing...");
         
         try
         {
@@ -56,13 +56,13 @@ public class ProductsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created)]
     public async Task<ActionResult<Product>> PostProduct([FromBody] Product product, [FromServices] IProductData db)
     {
-        _logger.LogInformation("Products > PostProduct controller executing...");
+        _loggerProduct.LogInformation("Products > PostProduct controller executing...");
 
         try
         {
             if (product == null) return BadRequest(new ArgumentNullException());
             var result = await db.CreateProduct(product);
-            return CreatedAtAction(nameof(GetOneProduct), new { result.IdProduct }, result);
+            return Created(nameof(GetOneProduct), result);
         }
         catch (Exception exception)
         {
@@ -73,16 +73,19 @@ public class ProductsController : ControllerBase
     /// <summary>
     /// Completely modify a product.
     /// </summary>
+     
+    // PUT /products/{id}
+
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<ActionResult<Product>> PutProduct([FromRoute] int id, [FromBody] Product product, [FromServices] IProductData db)
     {
-        _logger.LogInformation("Products > PutProduct controller executing...");
+        _loggerProduct.LogInformation("Products > PutProduct controller executing...");
 
         try
         {
-            if (product == null) return BadRequest("Product was not provided");
-            if (id != product.IdProduct) return BadRequest("Ids do not correspond");
+            if (product == null) return BadRequest(new ArgumentNullException("Product was not provided"));
+            if (id != product.IdProduct) return BadRequest(new ArgumentNullException("Ids do not correspond"));
             await db.updateProduct(product);
             return NoContent();
         }
@@ -97,7 +100,7 @@ public class ProductsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<ActionResult<Product>> DeleteProduct([FromRoute] int id, [FromServices] IProductData db)
     {
-        _logger.LogInformation("Products > DeleteProduct controller executing...");
+        _loggerProduct.LogInformation("Products > DeleteProduct controller executing...");
 
         try
         {

@@ -1,4 +1,6 @@
-﻿using Core.Models;
+﻿using System.Data;
+using Core.Models;
+using Dapper;
 using DataAccess.DbAccess;
 
 namespace DataAccess.Data;
@@ -22,12 +24,15 @@ public class CategoryData : ICategoryData
         return await _database.LoadData<Category, dynamic>(storedProcedure: "dbo.Categories_GetOne", parameters: new { IdCategory });
     }
 
-    public Task CreateCategory(Category category)
+    public async Task<Category> CreateCategory(Category category)
     {
-        return _database.SaveData(storedProcedure: "dbo.Categories_Create", parameters: new
-        {
-            category.NameCategory
-        });
+        var p = new DynamicParameters();
+        p.Add("@NameCategory", category.NameCategory);
+        p.Add("@IdCategory", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+        await _database.SaveData(storedProcedure: "dbo.Categories_Create", parameters: p);
+
+        category.IdCategory = p.Get<int>("@IdCategory");
+        return category;
     }
 
     public Task UpdateCategory(Category category)

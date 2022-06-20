@@ -1,4 +1,6 @@
-﻿using Core.Models;
+﻿using System.Data;
+using Core.Models;
+using Dapper;
 using DataAccess.DbAccess;
 
 namespace DataAccess.Data;
@@ -22,15 +24,20 @@ public class ExpenseData : IExpenseData
         return await _database.LoadData<Expense, dynamic>(storedProcedure: "dbo.Expenses_GetOne", parameters: new { IdExpense });
     }
 
-    public Task CreateExpense(Expense expense)
+    public async Task<Expense> CreateExpense(Expense expense)
     {
-        return _database.SaveData(storedProcedure: "dbo.Expenses_Create", parameters: new
-        {
-            expense.Provider.IdProvider,
-            expense.PayMethod,
-            expense.Product.IdProduct,
-            expense.Spent
-        });
+        var p = new DynamicParameters();
+        p.Add("@IdProvider", expense.Provider.IdProvider);
+        p.Add("@IdPayMethod", expense.PayMethod);
+        p.Add("@IdProduct", expense.Product.IdProduct);
+        p.Add("@Spent", expense.Spent);
+        p.Add("@IdExpense", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+        await _database.SaveData(storedProcedure: "dbo.Orders_Create", parameters: p);
+
+        expense.IdExpense = p.Get<int>("@IdExpense");
+
+        return expense;
     }
 
     public Task UpdateExpense(Expense expense)

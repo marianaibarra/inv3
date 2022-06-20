@@ -1,4 +1,6 @@
-﻿using Core.Models;
+﻿using System.Data;
+using Core.Models;
+using Dapper;
 using DataAccess.DbAccess;
 
 namespace DataAccess.Data;
@@ -22,15 +24,18 @@ public class BussinessData : IBussinessData
         return await _database.LoadData<Bussiness, dynamic>(storedProcedure: "dbo.spBusinesses_GetOne", parameters: new { IdBussiness });
     }
 
-    public Task CreateBussiness(Bussiness bussiness)
+    public async Task<Bussiness> CreateBussiness(Bussiness bussiness)
     {
-        return _database.SaveData(storedProcedure: "dbo.spBusinesses_Create", parameters: new
-        {
-            bussiness.NameBussiness,
-            bussiness.Finance,
-            bussiness.IsCountBalance,
-            bussiness.Owner.IdOwner
-        });
+        var p = new DynamicParameters();
+        p.Add("@NameBussiness", bussiness.NameBussiness);
+        p.Add("@Finance", bussiness.Finance);
+        p.Add("@IsCountBalance", bussiness.IsCountBalance);
+        p.Add("@IdOwner", bussiness.Owner.IdOwner);
+        p.Add("@IdBussiness", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+        await _database.SaveData(storedProcedure: "dbo.spBusinesses_Create", parameters: p);
+
+        bussiness.IdBussiness = p.Get<int>("@IdBussiness");
+        return bussiness;
     }
 
     public Task UpdateBussiness(Bussiness bussiness)

@@ -1,4 +1,6 @@
-﻿using Core.Models;
+﻿using System.Data;
+using Core.Models;
+using Dapper;
 using DataAccess.DbAccess;
 
 namespace DataAccess.Data;
@@ -20,17 +22,19 @@ public class ProviderData : IProviderData
     {
         return await _database.LoadData<Provider, dynamic>(storedProcedure: "dbo.Providers_GetOne", parameters: new { IdProvider });
     }
-
-    public Task CreateProvider(Provider provider)
+    public async Task<Provider> CreateProvider(Provider provider)
     {
-        return _database.SaveData(storedProcedure: "dbo.Providers_Create", parameters: new
-        {
-            provider.NameProvider,
-            provider.PhoneProvider,
-            provider.ProductProvider.IdProduct,
-            provider.AddressProvider,
-            provider.EmailProvider
-        });
+        var p = new DynamicParameters();
+        p.Add("@DateSale", provider.NameProvider);
+        p.Add("@PhoneProvider", provider.PhoneProvider);
+        p.Add("@AddressProvider", provider.AddressProvider);
+        p.Add("@EmailProvider", provider.EmailProvider);
+        p.Add("@IdProduct", provider.ProductProvider.IdProduct);
+        p.Add("@IdProvider", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+        await _database.SaveData(storedProcedure: "dbo.spProducts_Create", parameters: p);
+
+        provider.IdProvider = p.Get<int>("@IdProvider");
+        return provider;
     }
 
     public Task UpdateProvider(Provider provider)

@@ -40,6 +40,14 @@ public class Program
         builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
         // Data operations
         builder.Services.AddSingleton<IProductData, ProductData>();
+        builder.Services.AddSingleton<IBussinessData, BussinessData>();
+        builder.Services.AddSingleton<ICategoryData, CategoryData>();
+        builder.Services.AddSingleton<IClientData, ClientData>();
+        builder.Services.AddSingleton<IExpenseData, ExpenseData>();
+        builder.Services.AddSingleton<IOrderData, OrderData>();
+        builder.Services.AddSingleton<IOwnerData, OwnerData>();
+        builder.Services.AddSingleton<IProviderData, ProviderData>();
+        builder.Services.AddSingleton<ISaleData, SaleData>();
 
         var app = builder.Build();
 
