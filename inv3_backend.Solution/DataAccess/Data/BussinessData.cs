@@ -32,7 +32,7 @@ public class BussinessData : IBussinessData
         p.Add("@IsCountBalance", bussiness.IsCountBalance);
         p.Add("@IdOwner", bussiness.Owner.IdOwner);
         p.Add("@IdBussiness", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        await _database.SaveData(storedProcedure: "dbo.spBusinesses_Create", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.spBusinesses_Insert", parameters: p);
 
         bussiness.IdBussiness = p.Get<int>("@IdBussiness");
         return bussiness;

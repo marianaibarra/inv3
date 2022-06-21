@@ -31,7 +31,7 @@ public class OwnerData : IOwnerData
         p.Add("@Email", owner.Email);
         p.Add("@Phone", owner.Phone);
         p.Add("@IdOwner", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        await _database.SaveData(storedProcedure: "dbo.spProducts_Create", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.spProducts_Insert", parameters: p);
 
         owner.IdOwner = p.Get<int>("@IdOwner");
         return owner;

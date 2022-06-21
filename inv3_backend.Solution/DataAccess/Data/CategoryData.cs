@@ -29,7 +29,7 @@ public class CategoryData : ICategoryData
         var p = new DynamicParameters();
         p.Add("@NameCategory", category.NameCategory);
         p.Add("@IdCategory", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        await _database.SaveData(storedProcedure: "dbo.Categories_Create", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.Categories_Insert", parameters: p);
 
         category.IdCategory = p.Get<int>("@IdCategory");
         return category;

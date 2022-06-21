@@ -32,8 +32,8 @@ public class OrderData : IOrderData
         p.Add("@IdProduct", order.Product.IdProduct);
         p.Add("@IdOrderOrigin", order.OrderOrigin);
         p.Add("@IdOrder", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        
-        await _database.SaveData(storedProcedure: "dbo.Orders_Create", parameters: p);
+
+        await _database.SaveData(storedProcedure: "dbo.Orders_Insert", parameters: p);
 
         order.IdOrder = p.Get<int>("@IdOrder");
 

@@ -33,7 +33,7 @@ public class ExpenseData : IExpenseData
         p.Add("@Spent", expense.Spent);
         p.Add("@IdExpense", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-        await _database.SaveData(storedProcedure: "dbo.Orders_Create", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.Orders_Insert", parameters: p);
 
         expense.IdExpense = p.Get<int>("@IdExpense");
 

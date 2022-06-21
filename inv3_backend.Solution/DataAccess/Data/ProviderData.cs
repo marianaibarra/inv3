@@ -31,7 +31,7 @@ public class ProviderData : IProviderData
         p.Add("@EmailProvider", provider.EmailProvider);
         p.Add("@IdProduct", provider.ProductProvider.IdProduct);
         p.Add("@IdProvider", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        await _database.SaveData(storedProcedure: "dbo.spProducts_Create", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.spProducts_Insert", parameters: p);
 
         provider.IdProvider = p.Get<int>("@IdProvider");
         return provider;

@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿#nullable disable
+using System.ComponentModel.DataAnnotations;
 using Core.Models;
 
 namespace Core.ValidationAttributes;
 
 public class Order_EnsureDeliveryDateIsLaterThanCurrent : ValidationAttribute
 {
-    protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
         var order = validationContext.ObjectInstance as Order;
         if (!order.EnsureDeliveryDateIsLaterThanCurrent())

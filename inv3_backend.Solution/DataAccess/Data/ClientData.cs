@@ -33,7 +33,7 @@ public class ClientData : IClientData
         p.Add("@PhoneClient", client.PhoneClient);
         p.Add("@AddressClient", client.AddressClient);
         p.Add("@IdClient", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        await _database.SaveData(storedProcedure: "dbo.Clients_Create", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.Clients_Insert", parameters: p);
 
         client.IdClient = p.Get<int>("@IdClient");
         return client;

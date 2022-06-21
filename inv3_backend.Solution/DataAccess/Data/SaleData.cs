@@ -32,7 +32,7 @@ public class SaleData : ISaleData
         p.Add("@Income", sale.Income);
         p.Add("@IdProduct", sale.Product.IdProduct);
         p.Add("@IdSale", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        await _database.SaveData(storedProcedure: "dbo.spProducts_Create", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.spProducts_Insert", parameters: p);
 
         sale.IdSale = p.Get<int>("@IdSale");
         return sale;

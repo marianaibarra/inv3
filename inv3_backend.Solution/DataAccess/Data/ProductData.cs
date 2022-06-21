@@ -37,7 +37,7 @@ public class ProductData : IProductData
         p.Add("@UnitaryCost", product.UnitaryCost);
         p.Add("@Quantity", product.Quantity);
         p.Add("@IdProduct", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        await _database.SaveData(storedProcedure: "dbo.spProducts_Create", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.spProducts_Insert", parameters: p);
 
         product.IdProduct = p.Get<int>("@IdProduct");
         return product;
@@ -52,4 +52,4 @@ public class ProductData : IProductData
     {
         return _database.SaveData(storedProcedure: "dbo.spProducts_Delete", parameters: new { IdProduct = id });
     }
-} 
+}
