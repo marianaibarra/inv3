@@ -38,16 +38,16 @@ public class Program
         builder.Services.AddSwaggerGen();
         // Data access
         builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
-        // Data operations
-        builder.Services.AddSingleton<IProductData, ProductData>();
-        builder.Services.AddSingleton<IBussinessData, BussinessData>();
-        builder.Services.AddSingleton<ICategoryData, CategoryData>();
-        builder.Services.AddSingleton<IClientData, ClientData>();
-        builder.Services.AddSingleton<IExpenseData, ExpenseData>();
-        builder.Services.AddSingleton<IOrderData, OrderData>();
-        builder.Services.AddSingleton<IOwnerData, OwnerData>();
-        builder.Services.AddSingleton<IProviderData, ProviderData>();
-        builder.Services.AddSingleton<ISaleData, SaleData>();
+        // Data services
+        builder.Services.AddScoped<IProductData, ProductData>();
+        builder.Services.AddScoped<IBussinessData, BussinessData>();
+        builder.Services.AddScoped<ICategoryData, CategoryData>();
+        builder.Services.AddScoped<IClientData, ClientData>();
+        builder.Services.AddScoped<IExpenseData, ExpenseData>();
+        builder.Services.AddScoped<IOrderData, OrderData>();
+        builder.Services.AddScoped<IOwnerData, OwnerData>();
+        builder.Services.AddScoped<IProviderData, ProviderData>();
+        builder.Services.AddScoped<ISaleData, SaleData>();
 
         var app = builder.Build();
 

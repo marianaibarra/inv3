@@ -33,7 +33,7 @@ public class BussinessController : ControllerBase
 
     // GET /bussiness/{id}
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetOneBussiness")]
     public async Task<ActionResult<Bussiness>> GetOneBussiness([FromRoute] int id, [FromServices] IBussinessData db)
     {
         _loggerBussiness.LogInformation("Bussiness > GetOneBussiness controller executing...");
@@ -62,6 +62,8 @@ public class BussinessController : ControllerBase
         {
             if (bussiness == null) return BadRequest(new ArgumentNullException());
             var result = await db.CreateBussiness(bussiness);
+            // TODO:
+            // - see how it changes with CreatedAtRoute mehod (name, id, object)
             return Created(nameof(GetOneBussiness), result);
         }
         catch (Exception exception)
