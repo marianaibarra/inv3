@@ -14,8 +14,5 @@ BEGIN
 
     INSERT INTO [dbo].[Categories] ([Category]) VALUES ("Food");
     INSERT INTO [dbo].[Categories] ([Category]) VALUES ("Tech");
-    INSERT INTO [dbo].[Products] VALUES ("Empanada", "empanada.png", 1, 45.5, 20.5, 10);
-    INSERT INTO [dbo].[Products] VALUES ("Arepa", "arepa.png", 1, 50.9, 20.5, 100);
-    INSERT INTO [dbo].[Products] VALUES ("Asus vivobook", "asusvivobook.png", 2, 162.3, 400.5, 8);
 
 END

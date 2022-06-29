@@ -20,7 +20,7 @@ public class ProductsController : ControllerBase
     public async Task<ActionResult<Product>> GetProducts([FromServices] IProductData db)
     {
         _loggerProduct.LogInformation("Products > GetProducts controller executing...");
-        
+
         try
         {
             return Ok(await db.GetProducts());
@@ -37,7 +37,7 @@ public class ProductsController : ControllerBase
     public async Task<ActionResult<Product>> GetOneProduct([FromRoute] int id, [FromServices] IProductData db)
     {
         _loggerProduct.LogInformation("Products > GetOneProduct controller executing...");
-        
+
         try
         {
             var result = await db.GetOneProduct(id);
@@ -73,7 +73,7 @@ public class ProductsController : ControllerBase
     /// <summary>
     /// Completely modify a product.
     /// </summary>
-     
+
     // PUT /products/{id}
 
     [HttpPut("{id}")]

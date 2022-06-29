@@ -16,12 +16,12 @@ public class ClientData : IClientData
 
     public Task<IEnumerable<Client>> GetClients()
     {
-        return _database.LoadData<Client, dynamic>(storedProcedure: "dbo.Clients_Get", parameters: new { });
+        return _database.LoadData<Client, dynamic>(storedProcedure: "dbo.spClients_Get", parameters: new { });
     }
 
     public async Task<IEnumerable<Client>> GetOneClient(int IdClient)
     {
-        return await _database.LoadData<Client, dynamic>(storedProcedure: "dbo.Clients_GetOne", parameters: new { IdClient });
+        return await _database.LoadData<Client, dynamic>(storedProcedure: "dbo.spClients_GetOne", parameters: new { IdClient });
     }
 
     public async Task<Client> CreateClient(Client client)
@@ -33,7 +33,7 @@ public class ClientData : IClientData
         p.Add("@PhoneClient", client.PhoneClient);
         p.Add("@AddressClient", client.AddressClient);
         p.Add("@IdClient", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-        await _database.SaveData(storedProcedure: "dbo.Clients_Insert", parameters: p);
+        await _database.SaveData(storedProcedure: "dbo.spClients_Insert", parameters: p);
 
         client.IdClient = p.Get<int>("@IdClient");
         return client;
@@ -41,11 +41,11 @@ public class ClientData : IClientData
 
     public Task UpdateClient(Client client)
     {
-        return _database.SaveData(storedProcedure: "dbo.Clients_Update", parameters: client);
+        return _database.SaveData(storedProcedure: "dbo.spClients_Update", parameters: client);
     }
 
     public Task DeleteClient(int IdClient)
     {
-        return _database.SaveData(storedProcedure: "dbo.Clients_Delete", parameters: new { IdClient });
+        return _database.SaveData(storedProcedure: "dbo.spClients_Delete", parameters: new { IdClient });
     }
 }
