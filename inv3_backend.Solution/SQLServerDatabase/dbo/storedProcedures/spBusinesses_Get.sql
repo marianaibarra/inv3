@@ -5,7 +5,7 @@ BEGIN TRY
 
     SET NOCOUNT ON;
     
-    SELECT [IdBussiness],[Name],[IdOwner],[Finance],[IsCountBalance]
+    SELECT [IdBussiness],[NameBussiness],[IdOwner],[Finance],[IsCountBalance]
     FROM [dbo].[Businesses]
 
 END TRY 

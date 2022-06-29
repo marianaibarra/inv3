@@ -1,6 +1,6 @@
 CREATE PROCEDURE [dbo].[spBusinesses_Update]
     @IdBussiness int,
-    @Name varchar(30),
+    @NameBussiness varchar(30),
     @IdOwner int,
     @Finance money,
     @IsCountBalance bit
@@ -10,13 +10,13 @@ BEGIN TRY
     SET NOCOUNT ON;
     
     UPDATE [dbo].[Businesses]
-    SET [IdBussiness] = [@IdBussiness],
-    [Name] = [@Name],
-    [IdOwner] = [@IdOwner],
-    [Finance] = [@Finance],
-    [IsCountBalance] = [@IsCountBalance]
+    SET [IdBussiness] = @IdBussiness,
+    [NameBussiness] = @NameBussiness,
+    [IdOwner] = @IdOwner,
+    [Finance] = @Finance,
+    [IsCountBalance] = @IsCountBalance
 
-    WHERE [IdBusinesse] = @IdBusinesse;
+    WHERE [IdBussiness] = @IdBussiness;
 
 END TRY 
 

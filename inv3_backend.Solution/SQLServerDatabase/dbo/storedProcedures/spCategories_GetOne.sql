@@ -1,5 +1,6 @@
 CREATE PROCEDURE [dbo].[spCategories_GetOne]
-    
+    @IdCategory int
+
 AS
 BEGIN TRY
 

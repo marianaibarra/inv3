@@ -11,7 +11,7 @@ BEGIN TRY
 
     INSERT INTO [dbo].[Orders]
     ([IdProduct],[IdClient],[OrderDate],[DeliveryDate],[OrderOrigin])
-    VALUES ([@IdProduct],[@IdClient],[@OrderDate],[@DeliveryDate],[@OrderOrigin])
+    VALUES (@IdProduct,@IdClient,@OrderDate,@DeliveryDate,@OrderOrigin)
 
     SELECT @IdOrder = SCOPE_IDENTITY();
 

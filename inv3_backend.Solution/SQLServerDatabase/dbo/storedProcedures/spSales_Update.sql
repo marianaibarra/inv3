@@ -11,12 +11,12 @@ BEGIN TRY
     SET NOCOUNT ON;
     
     UPDATE [dbo].[Sales]
-    SET [IdSale] = [@IdSale],
-    [DateSale] = [@DateSale],
-    [IdPayMethod] = [@IdPayMethod],
-    [IdClient] = [@IdClient],
-    [Income] = [@Income],
-    [IdProduct] = [@IdProduct]
+    SET [IdSale] = @IdSale,
+    [DateSale] = @DateSale,
+    [IdPayMethod] = @IdPayMethod,
+    [IdClient] = @IdClient,
+    [Income] = @Income,
+    [IdProduct] = @IdProduct
     
     WHERE [IdSale] = @IdSale;
 

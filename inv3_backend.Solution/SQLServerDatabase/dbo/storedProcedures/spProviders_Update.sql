@@ -3,19 +3,18 @@ CREATE PROCEDURE [dbo].[spProviders_Update]
     @Name varchar(30),
     @Address varchar(15),
     @Phone varchar(12),
-    @Email varchar(40),
+    @Email varchar(40)
 AS
 BEGIN TRY
 
     SET NOCOUNT ON;
     
     UPDATE [dbo].[Providers]
-    SET [IdProvider] = [@IdProvider],
-    [Name] = [@Name],
-    [Address] = [@Address],
-    [Phone] = [@Phone],
-    [Email] = [@Email],
-    
+    SET [IdProvider] = @IdProvider,
+    [Name] = @Name,
+    [Address] = @Address,
+    [Phone] = @Phone,
+    [Email] = @Email
 
     WHERE [IdProvider] = @IdProvider;
 

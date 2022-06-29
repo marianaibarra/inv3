@@ -11,7 +11,7 @@ BEGIN TRY
 
     INSERT INTO [dbo].[Clients]
     ([Name],[LastName],[Address],[Phone],[Email])
-    VALUES ([@Name],[@LastName],[@Address],[@Phone],[@Email])
+    VALUES (@Name,@LastName,@Address,@Phone,@Email)
 
     SELECT @IdClient = SCOPE_IDENTITY();
 

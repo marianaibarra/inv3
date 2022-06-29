@@ -1,5 +1,5 @@
 CREATE PROCEDURE [dbo].[spBusinesses_Insert]
-    @Name varchar(30),
+    @NameBussiness varchar(30),
     @IdOwner int,
     @Finance money,
     @IsCountBalance bit,
@@ -9,8 +9,8 @@ BEGIN TRY
     SET NOCOUNT ON;
 
     INSERT INTO [dbo].[Businesses]
-    ([Name],[IdOwner],[Finance],[IsCountBalance])
-    VALUES ([@Name],[@IdOwner],[@Finance],[@IsCountBalance])
+    ([NameBussiness],[IdOwner],[Finance],[IsCountBalance])
+    VALUES (@NameBussiness,@IdOwner,@Finance,@IsCountBalance)
 
     SELECT @IdBussiness = SCOPE_IDENTITY();
 

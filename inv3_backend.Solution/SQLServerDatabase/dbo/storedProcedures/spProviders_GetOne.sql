@@ -1,5 +1,6 @@
 CREATE PROCEDURE [dbo].[spProviders_GetOne]
-    
+    @IdProvider int
+
 AS
 BEGIN TRY
 

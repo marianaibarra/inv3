@@ -1,5 +1,5 @@
 CREATE PROCEDURE [dbo].[spExpenses_GetOne]
-    
+    @IdExpense int
 AS
 BEGIN TRY
 

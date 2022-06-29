@@ -7,8 +7,8 @@ BEGIN TRY
     SET NOCOUNT ON;
     
     UPDATE [dbo].[Categories]
-    SET [IdCategory] = [@IdCategory],
-    [Category] = [@Category]
+    SET [IdCategory] = @IdCategory,
+    [Category] = @Category
     
     WHERE [IdCategory] = @IdCategory;
 

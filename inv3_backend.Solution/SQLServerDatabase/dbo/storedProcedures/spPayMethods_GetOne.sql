@@ -1,5 +1,5 @@
 CREATE PROCEDURE [dbo].[spPayMethods_GetOne]
-    
+    @IdPayMethod int
 AS
 BEGIN TRY
 

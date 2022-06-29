@@ -12,7 +12,7 @@ BEGIN TRY
 
     INSERT INTO [dbo].[Owners]
     ([Username],[Name],[LastName],[Password],[Email],[Phone])
-    VALUES ([@Username],[@Name],[@LastName],[@Password],[@Email],[@Phone])
+    VALUES (@Username,@Name,@LastName,@Password,@Email,@Phone)
 
     SELECT @IdOwner = SCOPE_IDENTITY();
 

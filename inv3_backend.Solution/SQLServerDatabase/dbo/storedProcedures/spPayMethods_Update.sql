@@ -1,14 +1,14 @@
 CREATE PROCEDURE [dbo].[spPayMethods_Update]
     @IdPayMethod int,
-    @PayMethod varchar(20),
+    @PayMethod varchar(20)
 AS
 BEGIN TRY
 
     SET NOCOUNT ON;
     
     UPDATE [dbo].[PayMethods]
-    SET [IdPayMethod] = [@IdPayMethod],
-    [PayMethod] = [@PayMethod]
+    SET [IdPayMethod] = @IdPayMethod,
+    [PayMethod] = @PayMethod
 
     WHERE [IdPayMethod] = @IdPayMethod;
 

@@ -7,7 +7,7 @@ BEGIN TRY
 
     INSERT INTO [dbo].[PayMethods]
     ([PayMethod])
-    VALUES ([@PayMethod])
+    VALUES (@PayMethod)
 
     SELECT @IdPayMethod = SCOPE_IDENTITY();
 

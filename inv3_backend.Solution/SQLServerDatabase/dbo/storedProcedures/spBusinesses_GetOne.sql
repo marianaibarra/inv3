@@ -1,11 +1,12 @@
 CREATE PROCEDURE [dbo].[spBusinesses_GetOne]
-    
+    @IdBussiness int
+
 AS
 BEGIN TRY
 
     SET NOCOUNT ON;
     
-    SELECT [IdBussiness],[Name],[IdOwner],[Finance],[IsCountBalance]
+    SELECT [IdBussiness],[NameBussiness],[IdOwner],[Finance],[IsCountBalance]
     FROM [dbo].[Businesses]
     WHERE [IdBussiness] = @IdBussiness;
 

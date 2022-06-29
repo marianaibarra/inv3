@@ -12,13 +12,13 @@ BEGIN TRY
     SET NOCOUNT ON;
     
     UPDATE [dbo].[Owners]
-    SET [IdOwner] = [@IdOwner],
-    [Username] = [@Username],
-    [Name] = [@Name],
-    [LastName] = [@LastName],
-    [Password] = [@Password],
-    [Email] = [@Email],
-    [Phone] = [@Phone]
+    SET [IdOwner] = @IdOwner,
+    [Username] = @Username,
+    [Name] = @Name,
+    [LastName] = @LastName,
+    [Password] = @Password,
+    [Email] = @Email,
+    [Phone] = @Phone
     
     WHERE [IdOwner] = @IdOwner;
 

@@ -11,7 +11,7 @@ BEGIN TRY
 
     INSERT INTO [dbo].[Sales]
     ([DateSale],[IdPayMethod],[IdClient],[Income],[IdProduct])
-    VALUES ([@DateSale],[@IdPayMethod],[@IdClient],[@Income],[@IdProduct])
+    VALUES (@DateSale,@IdPayMethod,@IdClient,@Income,@IdProduct)
 
     SELECT @IdSale = SCOPE_IDENTITY();
 

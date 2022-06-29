@@ -10,7 +10,7 @@ SET NOCOUNT ON;
 
     INSERT INTO [dbo].[Providers]
     ([Name],[Address],[Phone],[Email])
-    VALUES ([@Name],[@Address],[@Phone],[@Email])
+    VALUES (@Name,@Address,@Phone,@Email)
 
     SELECT @IdProvider = SCOPE_IDENTITY();
 

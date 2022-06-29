@@ -1,4 +1,5 @@
 CREATE PROCEDURE [dbo].[spOrders_GetOne]
+    @IdOrder int
     
 AS
 BEGIN TRY

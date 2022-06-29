@@ -1,5 +1,6 @@
 CREATE PROCEDURE [dbo].[spOwners_GetOne]
-    
+    @IdOwner int
+
 AS
 BEGIN TRY
 

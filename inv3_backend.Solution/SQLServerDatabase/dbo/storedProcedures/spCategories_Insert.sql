@@ -7,7 +7,7 @@ BEGIN TRY
 
     INSERT INTO [dbo].[Categories]
     ([Category])
-    VALUES ([@Category])
+    VALUES (@Category)
 
     SELECT @IdCategory = SCOPE_IDENTITY();
 

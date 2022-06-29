@@ -11,12 +11,12 @@ BEGIN TRY
     SET NOCOUNT ON;
     
     UPDATE [dbo].[Orders]
-    SET [IdOrder] = [@IdOrder],
-    [IdProduct] = [@IdProduct],
-    [IdClient] = [@IdClient],
-    [OrderDate] = [@OrderDate],
-    [DeliveryDate] = [@DeliveryDate],
-    [OrderOrigin] = [@OrderOrigin]
+    SET [IdOrder] = @IdOrder,
+    [IdProduct] = @IdProduct,
+    [IdClient] = @IdClient,
+    [OrderDate] = @OrderDate,
+    [DeliveryDate] = @DeliveryDate,
+    [OrderOrigin] = @OrderOrigin
 
     WHERE [IdOrder] = @IdOrder;
 
