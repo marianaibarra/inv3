@@ -1,0 +1,295 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
+        "projectName": "EndpointsTest",
+        "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
+        "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj": {
+                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Autofac.Extras.Moq": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.2.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj",
+        "projectName": "WebApi",
+        "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj"
+              },
+              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.Identity.Web": {
+              "target": "Package",
+              "version": "[1.16.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
