@@ -1,0 +1,64 @@
+﻿** Aspectos destacados
+     Tablas que se volverán a compilar
+       Ninguno
+     Índices clúster que se van a quitar
+       Ninguno
+     Índices clúster que se van a crear
+       Ninguno
+     Posibles incidencias de datos
+       Ninguno
+
+** Acciones del usuario
+     Cambiar nombre
+       [dbo].[Businesses].[NameBussiness] (Columna)
+     Crear
+       [dbo].[spBusinesses_Delete] (Procedimiento)
+       [dbo].[spBusinesses_Get] (Procedimiento)
+       [dbo].[spBusinesses_GetOne] (Procedimiento)
+       [dbo].[spBusinesses_Insert] (Procedimiento)
+       [dbo].[spBusinesses_Update] (Procedimiento)
+       [dbo].[spCategories_Delete] (Procedimiento)
+       [dbo].[spCategories_Get] (Procedimiento)
+       [dbo].[spCategories_GetOne] (Procedimiento)
+       [dbo].[spCategories_Insert] (Procedimiento)
+       [dbo].[spCategories_Update] (Procedimiento)
+       [dbo].[spClients_Delete] (Procedimiento)
+       [dbo].[spClients_Get] (Procedimiento)
+       [dbo].[spClients_GetOne] (Procedimiento)
+       [dbo].[spClients_Insert] (Procedimiento)
+       [dbo].[spClients_Update] (Procedimiento)
+       [dbo].[spExpenses_Delete] (Procedimiento)
+       [dbo].[spExpenses_Get] (Procedimiento)
+       [dbo].[spExpenses_GetOne] (Procedimiento)
+       [dbo].[spExpenses_Insert] (Procedimiento)
+       [dbo].[spExpenses_Update] (Procedimiento)
+       [dbo].[spOrders_Delete] (Procedimiento)
+       [dbo].[spOrders_Get] (Procedimiento)
+       [dbo].[spOrders_GetOne] (Procedimiento)
+       [dbo].[spOrders_Insert] (Procedimiento)
+       [dbo].[spOrders_Update] (Procedimiento)
+       [dbo].[spOwners_Delete] (Procedimiento)
+       [dbo].[spOwners_Get] (Procedimiento)
+       [dbo].[spOwners_GetOne] (Procedimiento)
+       [dbo].[spOwners_Insert] (Procedimiento)
+       [dbo].[spOwners_Update] (Procedimiento)
+       [dbo].[spPayMethods_Delete] (Procedimiento)
+       [dbo].[spPayMethods_Get] (Procedimiento)
+       [dbo].[spPayMethods_GetOne] (Procedimiento)
+       [dbo].[spPayMethods_Insert] (Procedimiento)
+       [dbo].[spPayMethods_Update] (Procedimiento)
+       [dbo].[spProducts_Insert] (Procedimiento)
+       [dbo].[spProductsGetOne] (Procedimiento)
+       [dbo].[spProductsUpdate] (Procedimiento)
+       [dbo].[spProviders_Delete] (Procedimiento)
+       [dbo].[spProviders_Get] (Procedimiento)
+       [dbo].[spProviders_GetOne] (Procedimiento)
+       [dbo].[spProviders_Insert] (Procedimiento)
+       [dbo].[spProviders_Update] (Procedimiento)
+       [dbo].[spSales_Delete] (Procedimiento)
+       [dbo].[spSales_Get] (Procedimiento)
+       [dbo].[spSales_GetOne] (Procedimiento)
+       [dbo].[spSales_Insert] (Procedimiento)
+       [dbo].[spSales_Update] (Procedimiento)
+
+** Acciones de compatibilidad

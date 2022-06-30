@@ -1,0 +1,87 @@
+12/06/2022 12:01:43 p. m.	Este registro contiene información acerca de la operación de importación de esquema en el proyecto 'SQLServerDatabase' del equipo 'LAPTOP-2HVAQE28' por el usuario 'MARIANA'.
+12/06/2022 12:01:43 p. m.	Se inició la importación del esquema de la base de datos.
+12/06/2022 12:02:09 p. m.	Recopilando credenciales de la base de datos
+12/06/2022 12:02:09 p. m.	Recopilando opciones de base de datos
+12/06/2022 12:02:09 p. m.	Recopilando la opción de configuración de ámbito de la base de datos genérica
+12/06/2022 12:02:09 p. m.	Recopilando usuarios
+12/06/2022 12:02:09 p. m.	Recopilando roles
+12/06/2022 12:02:09 p. m.	Recopilando roles de aplicación
+12/06/2022 12:02:09 p. m.	Recopilando pertenencias a roles
+12/06/2022 12:02:09 p. m.	Recopilando grupos de archivos
+12/06/2022 12:02:09 p. m.	Recopilando catálogos de texto completo
+12/06/2022 12:02:09 p. m.	Recopilando ensamblados
+12/06/2022 12:02:09 p. m.	Recopilando certificados
+12/06/2022 12:02:09 p. m.	Recopilando claves asimétricas
+12/06/2022 12:02:09 p. m.	Recopilando claves simétricas
+12/06/2022 12:02:09 p. m.	Recopilando claves simétricas cifradas
+12/06/2022 12:02:09 p. m.	Recopilando esquemas
+12/06/2022 12:02:09 p. m.	Recopilando colecciones de esquemas XML
+12/06/2022 12:02:09 p. m.	Recopilando tipos de datos definidos por el usuario
+12/06/2022 12:02:09 p. m.	Recopilando tipos definidos por el usuario
+12/06/2022 12:02:09 p. m.	Recopilando tipos de tabla
+12/06/2022 12:02:09 p. m.	Recopilando claves únicas para tipos de tabla
+12/06/2022 12:02:09 p. m.	Recopilando claves principales para tipos de tabla
+12/06/2022 12:02:09 p. m.	Recopilando índices para tipos de tablas
+12/06/2022 12:02:25 p. m.	Recopilando restricciones CHECK para tipos de tabla
+12/06/2022 12:02:25 p. m.	Recopilando restricciones DEFAULT para tipos de tabla
+12/06/2022 12:02:25 p. m.	Recopilando funciones de partición
+12/06/2022 12:02:25 p. m.	Recopilando esquemas de partición
+12/06/2022 12:02:25 p. m.	Recopilando funciones
+12/06/2022 12:02:25 p. m.	Recopilando funciones cifradas
+12/06/2022 12:02:25 p. m.	Recopilando agregados
+12/06/2022 12:02:25 p. m.	Recopilando procedimientos
+12/06/2022 12:02:50 p. m.	Recopilando procedimientos cifrados
+12/06/2022 12:02:50 p. m.	Recopilando tablas
+12/06/2022 12:03:40 p. m.	Recopilando claves principales
+12/06/2022 12:03:41 p. m.	Recopilando restricciones UNIQUE
+12/06/2022 12:03:41 p. m.	Recopilando claves externas
+12/06/2022 12:03:41 p. m.	Recopilando restricciones DEFAULT
+12/06/2022 12:03:41 p. m.	Recopilando restricciones CHECK
+12/06/2022 12:03:41 p. m.	Recopilando vistas
+12/06/2022 12:03:41 p. m.	Recopilando vistas cifradas
+12/06/2022 12:03:41 p. m.	Recopilando índices
+12/06/2022 12:03:41 p. m.	Recopilando estadísticas
+12/06/2022 12:03:41 p. m.	Recopilando listas de palabras irrelevantes de índices de texto completo
+12/06/2022 12:03:41 p. m.	Recopilando listas de propiedades de búsqueda
+12/06/2022 12:03:41 p. m.	Recopilando propiedades de búsqueda
+12/06/2022 12:03:41 p. m.	Recopilando índices de texto completo
+12/06/2022 12:03:41 p. m.	Recopilando índices de almacenamiento de columnas
+12/06/2022 12:03:41 p. m.	Recopilando índices espaciales
+12/06/2022 12:04:34 p. m.	Recopilando índices XML
+12/06/2022 12:04:34 p. m.	Recopilando índices XML selectivos
+12/06/2022 12:04:34 p. m.	Recopilando desencadenadores cifrados
+12/06/2022 12:04:34 p. m.	Recopilando desencadenadores
+12/06/2022 12:04:34 p. m.	Recopilando DDL triggers cifrados y de CLR
+12/06/2022 12:04:34 p. m.	Recopilando DDL triggers
+12/06/2022 12:04:34 p. m.	Creación de la restricción perimetral en curso
+12/06/2022 12:04:34 p. m.	Recopilando sinónimos
+12/06/2022 12:04:34 p. m.	Recopilando valores predeterminados
+12/06/2022 12:04:34 p. m.	Recopilando enlaces UDDT de restricción de datos
+12/06/2022 12:04:34 p. m.	Recopilando reglas
+12/06/2022 12:04:34 p. m.	Recopilando enlaces UDDT de restricción de datos
+12/06/2022 12:04:34 p. m.	Recopilando tipos de mensaje
+12/06/2022 12:04:34 p. m.	Recopilando colas
+12/06/2022 12:04:34 p. m.	Recopilando contratos
+12/06/2022 12:04:34 p. m.	Recopilando servicios
+12/06/2022 12:04:34 p. m.	Recopilando notificaciones de eventos
+12/06/2022 12:04:34 p. m.	Recopilando enlaces de servicio remoto
+12/06/2022 12:04:34 p. m.	Recopilando prioridades de Broker
+12/06/2022 12:04:34 p. m.	Recopilando firmas
+12/06/2022 12:04:34 p. m.	Recopilando opciones de compresión de datos
+12/06/2022 12:04:34 p. m.	Recopilando tipos de secuencia
+12/06/2022 12:04:34 p. m.	Recopilando directivas de seguridad
+12/06/2022 12:04:34 p. m.	Recopilar claves de cifrado de columna
+12/06/2022 12:04:34 p. m.	Recopilando claves maestras de columna
+12/06/2022 12:04:34 p. m.	Recopilando orígenes de datos externos
+12/06/2022 12:04:34 p. m.	Recopilando formatos de archivo externos
+12/06/2022 12:04:34 p. m.	Recopilando tablas externas
+12/06/2022 12:04:34 p. m.	Recopilando propiedades extendidas
+12/06/2022 12:04:35 p. m.	Recopilando ensamblados
+12/06/2022 12:04:35 p. m.	Recopilando credenciales
+12/06/2022 12:04:35 p. m.	Recopilando inicios de sesión
+12/06/2022 12:04:35 p. m.	Recopilando auditorías de servidor
+12/06/2022 12:04:38 p. m.	Buscando elementos duplicados en el proyecto
+12/06/2022 12:04:38 p. m.	Ha finalizado el procesamiento de los elementos duplicados
+12/06/2022 12:04:39 p. m.	Finalizó la importación de la base de datos.
+12/06/2022 12:04:39 p. m.	Se guardó un resumen de la importación en la siguiente ubicación: C:\Users\MARIANA\Development\inv3\inv3_backend.Solution\SQLServerDatabase\Registros de importación de esquemas\SQLServerDatabase_20220612050143.log
+12/06/2022 12:04:39 p. m.	Haga clic en Finalizar para continuar...
