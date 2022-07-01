@@ -6,8 +6,9 @@ using DataAccess.Data;
 using DataAccess.DbAccess;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 using Serilog;
-
 namespace inv3_backend;
 
 public class Program
@@ -45,7 +46,28 @@ public class Program
         });
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen(options =>
+        {
+            options.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Version = "v1",
+                Title = "Inv3 Web API",
+                Description = "An asp.net core web api to manage inv3 app entities",
+                TermsOfService = new Uri("https://localhost.com/terms"),
+                Contact = new OpenApiContact
+                {
+                    Name = "Mariana Ibarra",
+                    Url = new Uri("https://www.linkedin.com/in/m4arianaib4rra/")
+                },
+                License = new OpenApiLicense
+                {
+                    Name = "Open license",
+                    Url = new Uri("https://localhost.com/license")
+                }
+            });
+            var xmlFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileName));
+        });
         // Data access
         builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
         // Data services
@@ -65,11 +87,20 @@ public class Program
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(options =>
+            {
+                // Set route to app root
+                options.SwaggerEndpoint("swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
+                // Inject css
+                // options.InjectStylesheet("swagger-ui/custom.css");
+            });
         }
 
         app.UseHttpsRedirection();
 
+        // Enable to use static files to customize swagger ui
+        // app.UseStaticFiles();
         app.UseAuthentication();
         app.UseAuthorization();
 

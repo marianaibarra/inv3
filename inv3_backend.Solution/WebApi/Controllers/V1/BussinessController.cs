@@ -7,6 +7,7 @@ namespace inv3_backend.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [ApiVersion("1.0")]
+[Produces("application/json")]
 public class BussinessController : ControllerBase
 {
     // private readonly ILogger<BussinessController>? _loggerBussiness;
@@ -54,9 +55,28 @@ public class BussinessController : ControllerBase
     }
 
     // POST /bussiness
-
+    /// <summary>
+    /// Creates a bussiness.
+    /// </summary>
+    /// <param name="bussiness"></param>
+    /// <returns>A newly created bussiness</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     POST /bussiness
+    ///     {
+    ///        
+    ///         NameBussiness : "Open API", 
+    ///         IdOwner : 1
+    ///
+    ///     }
+    ///
+    /// </remarks>
+    /// <response code="201">Returns the newly created bussiness</response>
+    /// <response code="400">If the bussiness is null</response>
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<Bussiness>> PostBussiness([FromBody] Bussiness bussiness)
     {
         // _loggerBussiness.LogInformation("Bussiness > PostBussiness controller executing...");
@@ -65,8 +85,6 @@ public class BussinessController : ControllerBase
         {
             if (bussiness == null) return BadRequest(new ArgumentNullException());
             var result = await _db.CreateBussiness(bussiness);
-            // TODO:
-            // - see how it changes with CreatedAtRoute mehod (name, id, object)
             return Created(nameof(GetOneBussiness), result);
         }
         catch (Exception exception)
@@ -100,6 +118,10 @@ public class BussinessController : ControllerBase
     }
 
     // DELETE /bussinesss/{id}
+    /// <summary>
+    /// Deletes specified bussiness
+    /// </summary>
+    /// <param name="id"></param>
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<ActionResult<Bussiness>> DeleteBussiness([FromRoute] int id)
