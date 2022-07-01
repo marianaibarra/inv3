@@ -4,6 +4,8 @@
 
 using DataAccess.Data;
 using DataAccess.DbAccess;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Serilog;
 
 namespace inv3_backend;
@@ -33,6 +35,14 @@ public class Program
         builder.Logging.AddSerilog(logger);
 
         builder.Services.AddControllers();
+        // Add versioning
+        builder.Services.AddApiVersioning(options =>
+        {
+            options.AssumeDefaultVersionWhenUnspecified = true;
+            options.DefaultApiVersion = ApiVersion.Default;
+            options.ApiVersionReader = new MediaTypeApiVersionReader("version");
+            options.ReportApiVersions = true;
+        });
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

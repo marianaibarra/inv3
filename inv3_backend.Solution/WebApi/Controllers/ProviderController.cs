@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace inv3_backend.Controllers;
 
 [ApiController]
-[Route("api/v1/[Controller]")]
+[Route("api/[Controller]")]
+[ApiVersion("1.0")]
 public class ProvidersController : ControllerBase
 {
     private readonly ILogger<ProvidersController> _providerlogger;

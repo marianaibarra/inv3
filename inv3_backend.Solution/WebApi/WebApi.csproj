@@ -1,23 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-inv3_backend-78613855-7024-458A-9B85-8F6CEEF61C89</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.5" />
-    <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0" />
-    <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.5"/>
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0"/>
+    <PackageReference Include="Serilog.AspNetCore" Version="5.0.0"/>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0"/>
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj"/>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj"/>
   </ItemGroup>
-
 </Project>

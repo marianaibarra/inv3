@@ -3,7 +3,8 @@ using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("api/v1/[Controller]")]
+[Route("api/[Controller]")]
+[ApiVersion("1.0")]
 public class OwnersController : ControllerBase
 {
     private readonly ILogger<OwnersController> _ownerslogger;

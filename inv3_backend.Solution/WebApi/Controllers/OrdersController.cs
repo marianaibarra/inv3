@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace inv3_backend.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[Route("api/[controller]")]
+[ApiVersion("1.0")]
 public class OrdersController : ControllerBase
 {
     private readonly ILogger<OrdersController> _orderlogger;
