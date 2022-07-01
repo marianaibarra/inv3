@@ -115,6 +115,18 @@
           "lib/net5.0/Dapper.dll": {}
         }
       },
+      "FluentAssertions/6.7.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.4.0"
+        },
+        "compile": {
+          "lib/net6.0/FluentAssertions.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.5": {
         "type": "package",
         "dependencies": {
@@ -1401,6 +1413,18 @@
         },
         "runtime": {
           "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/4.4.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.4.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -2742,6 +2766,36 @@
         "lib/net5.0/Dapper.xml",
         "lib/netstandard2.0/Dapper.dll",
         "lib/netstandard2.0/Dapper.xml"
+      ]
+    },
+    "FluentAssertions/6.7.0": {
+      "sha512": "PWbow/R3MnYDP8UW7zh/w80rGb+1NufGoNJeuzouTo2bqpvwNTFxbDwF6XWfFZ5IuquL2225Um+qSyZ8jVsT+w==",
+      "type": "package",
+      "path": "fluentassertions/6.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FluentAssertions.png",
+        "fluentassertions.6.7.0.nupkg.sha512",
+        "fluentassertions.nuspec",
+        "lib/net47/FluentAssertions.dll",
+        "lib/net47/FluentAssertions.pdb",
+        "lib/net47/FluentAssertions.xml",
+        "lib/net6.0/FluentAssertions.dll",
+        "lib/net6.0/FluentAssertions.pdb",
+        "lib/net6.0/FluentAssertions.xml",
+        "lib/netcoreapp2.1/FluentAssertions.dll",
+        "lib/netcoreapp2.1/FluentAssertions.pdb",
+        "lib/netcoreapp2.1/FluentAssertions.xml",
+        "lib/netcoreapp3.0/FluentAssertions.dll",
+        "lib/netcoreapp3.0/FluentAssertions.pdb",
+        "lib/netcoreapp3.0/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml",
+        "lib/netstandard2.1/FluentAssertions.dll",
+        "lib/netstandard2.1/FluentAssertions.pdb",
+        "lib/netstandard2.1/FluentAssertions.xml"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.5": {
@@ -5066,6 +5120,27 @@
         "ref/xamarinwatchos10/_._",
         "system.componentmodel.typeconverter.4.1.0.nupkg.sha512",
         "system.componentmodel.typeconverter.nuspec"
+      ]
+    },
+    "System.Configuration.ConfigurationManager/4.4.0": {
+      "sha512": "gWwQv/Ug1qWJmHCmN17nAbxJYmQBM/E94QxKLksvUiiKB1Ld3Sc/eK1lgmbSjDFxkQhVuayI/cGFZhpBSodLrg==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.xml",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Console/4.3.0": {
@@ -8625,7 +8700,9 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Autofac.Extras.Moq >= 6.1.0",
+      "Core >= 1.0.0",
       "DataAccess >= 1.0.0",
+      "FluentAssertions >= 6.7.0",
       "Microsoft.NET.Test.Sdk >= 17.2.0",
       "Moq >= 4.18.1",
       "WebApi >= 1.0.0",
@@ -8639,11 +8716,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
+      "projectUniqueName": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
       "projectName": "EndpointsTest",
-      "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
+      "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
       "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\obj\\",
+      "outputPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -8658,11 +8735,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj"
+            "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
+              "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj"
             },
-            "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj": {
-              "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj"
+            "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj"
+            },
+            "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj": {
+              "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj"
             }
           }
         }
@@ -8680,6 +8760,10 @@
           "Autofac.Extras.Moq": {
             "target": "Package",
             "version": "[6.1.0, )"
+          },
+          "FluentAssertions": {
+            "target": "Package",
+            "version": "[6.7.0, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",

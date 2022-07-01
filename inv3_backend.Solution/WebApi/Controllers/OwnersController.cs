@@ -7,21 +7,23 @@ using Microsoft.AspNetCore.Mvc;
 public class OwnersController : ControllerBase
 {
     private readonly ILogger<OwnersController> _ownerslogger;
+    private readonly IOwnerData _db;
 
-    public OwnersController(ILogger<OwnersController> logger)
+    public OwnersController(ILogger<OwnersController> logger, IOwnerData db)
     {
         _ownerslogger = logger;
+        _db = db;
     }
 
     // GET /owners
     [HttpGet]
-    public async Task<ActionResult<Owner>> GetOwners([FromServices] IOwnerData db)
+    public async Task<ActionResult<Owner>> GetOwners()
     {
         _ownerslogger.LogInformation("Owners > GetOwners controller executing...");
 
         try
         {
-            return Ok(await db.GetOwners());
+            return Ok(await _db.GetOwners());
         }
         catch (Exception exception)
         {
@@ -32,13 +34,13 @@ public class OwnersController : ControllerBase
     // GET /owners/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Owner>> GetOneOwner([FromRoute] int id, [FromServices] IOwnerData db)
+    public async Task<ActionResult<Owner>> GetOneOwner([FromRoute] int id)
     {
         _ownerslogger.LogInformation("Owners > GetOneOwner controller executing...");
 
         try
         {
-            var result = await db.GetOneOwner(id);
+            var result = await _db.GetOneOwner(id);
             if (result == null) return NotFound();
             return Ok(result);
         }
@@ -52,14 +54,14 @@ public class OwnersController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Owner>> PostOwner([FromBody] Owner owner, [FromServices] IOwnerData db)
+    public async Task<ActionResult<Owner>> PostOwner([FromBody] Owner owner)
     {
         _ownerslogger.LogInformation("Owners > PostOwner controller executing...");
 
         try
         {
             if (owner == null) return BadRequest(new ArgumentNullException("owner was not provided"));
-            var result = await db.CreateOwner(owner);
+            var result = await _db.CreateOwner(owner);
             return Created(nameof(GetOneOwner), result);
         }
         catch (Exception exception)
@@ -75,7 +77,7 @@ public class OwnersController : ControllerBase
     // PUT /owners/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Owner>> PutOwner([FromRoute] int id, [FromBody] Owner owner, [FromServices] IOwnerData db)
+    public async Task<ActionResult<Owner>> PutOwner([FromRoute] int id, [FromBody] Owner owner)
     {
         _ownerslogger.LogInformation("Owners > PutOwner controller executing...");
 
@@ -83,7 +85,7 @@ public class OwnersController : ControllerBase
         {
             if (owner == null) return BadRequest(new ArgumentNullException("Owner was not provided"));
             if (id != owner.IdOwner) return BadRequest(new ArgumentException("Ids do not correspond"));
-            await db.UpdateOwner(owner);
+            await _db.UpdateOwner(owner);
             return NoContent();
         }
         catch (Exception exception)
@@ -95,13 +97,13 @@ public class OwnersController : ControllerBase
     // DELETE /owners/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Owner>> DeleteOwner([FromRoute] int id, [FromServices] IOwnerData db)
+    public async Task<ActionResult<Owner>> DeleteOwner([FromRoute] int id)
     {
         _ownerslogger.LogInformation("Owners > DeleteOwner controller executing...");
 
         try
         {
-            await db.DeleteOwner(id);
+            await _db.DeleteOwner(id);
             return NoContent();
         }
         catch (Exception exception)

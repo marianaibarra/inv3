@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj": {}
+    "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
+    "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj",
+        "projectUniqueName": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj",
+        "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\obj\\",
+        "outputPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -56,14 +56,14 @@
         }
       }
     },
-    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
+    "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj",
+        "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\obj\\",
+        "outputPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -78,8 +78,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj"
+              "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
+                "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj"
               }
             }
           }
@@ -126,14 +126,14 @@
         }
       }
     },
-    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj": {
+    "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
+        "projectUniqueName": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
         "projectName": "EndpointsTest",
-        "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
+        "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\EndpointsTest.csproj",
         "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\obj\\",
+        "outputPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\EndpointsTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -148,11 +148,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj"
+              "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
+                "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj"
               },
-              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj": {
-                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj"
+              "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj"
+              },
+              "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj": {
+                "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj"
               }
             }
           }
@@ -170,6 +173,10 @@
             "Autofac.Extras.Moq": {
               "target": "Package",
               "version": "[6.1.0, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.7.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -207,14 +214,14 @@
         }
       }
     },
-    "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj": {
+    "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj",
+        "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\MARIANA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\obj\\",
+        "outputPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MARIANA\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -229,11 +236,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj"
+              "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj": {
+                "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\Core\\Core.csproj"
               },
-              "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj"
+              "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "c:\\Users\\MARIANA\\Development\\inv3\\inv3_backend.Solution\\DataAccess\\DataAccess.csproj"
               }
             }
           }

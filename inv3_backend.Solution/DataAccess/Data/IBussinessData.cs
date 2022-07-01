@@ -7,7 +7,7 @@ namespace DataAccess.Data
         Task<Bussiness> CreateBussiness(Bussiness bussiness);
         Task DeleteBussiness(int IdBussiness);
         Task<IEnumerable<Bussiness>> GetBussinesses();
-        Task<IEnumerable<Bussiness?>> GetOneBussiness(int IdBussiness);
+        Task<Bussiness> GetOneBussiness(int IdBussiness);
         Task UpdateBussiness(Bussiness bussiness);
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿#nullable disable
+
+using System.Data;
 using Core.Models;
 using Dapper;
 using DataAccess.DbAccess;
@@ -19,9 +21,11 @@ public class BussinessData : IBussinessData
         return _database.LoadData<Bussiness, dynamic>(storedProcedure: "dbo.spBusinesses_Get", parameters: new { });
     }
 
-    public async Task<IEnumerable<Bussiness?>> GetOneBussiness(int IdBussiness)
+    public async Task<Bussiness> GetOneBussiness(int IdBussiness)
     {
-        return await _database.LoadData<Bussiness, dynamic>(storedProcedure: "dbo.spBusinesses_GetOne", parameters: new { IdBussiness });
+        var result = await _database.LoadData<Bussiness, dynamic>(storedProcedure: "dbo.spBusinesses_GetOne", parameters: new { IdBussiness });
+
+        return result.FirstOrDefault();
     }
 
     public async Task<Bussiness> CreateBussiness(Bussiness bussiness)
