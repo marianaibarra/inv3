@@ -156,3 +156,4 @@ c:\Users\MARIANA\Development\inv3\inv3_backend.Solution\EndpointsTest\obj\Debug\
 c:\Users\MARIANA\Development\inv3\inv3_backend.Solution\EndpointsTest\bin\Debug\net6.0\AutoMapper.dll
 c:\Users\MARIANA\Development\inv3\inv3_backend.Solution\EndpointsTest\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 c:\Users\MARIANA\Development\inv3\inv3_backend.Solution\EndpointsTest\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+c:\Users\MARIANA\Development\inv3\inv3_backend.Solution\EndpointsTest\bin\Debug\net6.0\WebApi.xml

@@ -2,6 +2,8 @@ using Core.Models;
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
+namespace inv3_backend.Controllers.V1;
+
 [ApiController]
 [Route("api/[Controller]")]
 [ApiVersion("1.0")]
@@ -15,7 +17,7 @@ public class SalesController : ControllerBase
 
     // GET /sales
     [HttpGet]
-    public async Task<ActionResult<Sale>> GetSales([FromServices] ISaleData db)
+    public async Task<ActionResult<Sale>> GetSalesV1([FromServices] ISaleData db)
     {
         _saleslogger.LogInformation("Sales > GetSales controller executing...");
 
@@ -32,7 +34,7 @@ public class SalesController : ControllerBase
     // GET /sales/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Sale>> GetOneSale([FromRoute] int id, [FromServices] ISaleData db)
+    public async Task<ActionResult<Sale>> GetOneSaleV1([FromRoute] int id, [FromServices] ISaleData db)
     {
         _saleslogger.LogInformation("Sales > GetOneSale controller executing...");
 
@@ -52,7 +54,7 @@ public class SalesController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Sale>> PostSale([FromBody] Sale sale, [FromServices] ISaleData db)
+    public async Task<ActionResult<Sale>> PostSaleV1([FromBody] Sale sale, [FromServices] ISaleData db)
     {
         _saleslogger.LogInformation("Sales > PostSale controller executing...");
 
@@ -60,7 +62,7 @@ public class SalesController : ControllerBase
         {
             if (sale == null) return BadRequest(new ArgumentNullException("sale was not provided"));
             var result = await db.CreateSale(sale);
-            return Created(nameof(GetOneSale), result);
+            return Created(nameof(GetOneSaleV1), result);
         }
         catch (Exception exception)
         {
@@ -75,7 +77,7 @@ public class SalesController : ControllerBase
     // PUT /sales/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Sale>> PutSale([FromRoute] int id, [FromBody] Sale sale, [FromServices] ISaleData db)
+    public async Task<ActionResult<Sale>> PutSaleV1([FromRoute] int id, [FromBody] Sale sale, [FromServices] ISaleData db)
     {
         _saleslogger.LogInformation("Sales > PutSale controller executing...");
 
@@ -95,7 +97,7 @@ public class SalesController : ControllerBase
     // DELETE /sales/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Sale>> DeleteSale([FromRoute] int id, [FromServices] ISaleData db)
+    public async Task<ActionResult<Sale>> DeleteSaleV1([FromRoute] int id, [FromServices] ISaleData db)
     {
         _saleslogger.LogInformation("Sales > DeleteSale controller executing...");
 

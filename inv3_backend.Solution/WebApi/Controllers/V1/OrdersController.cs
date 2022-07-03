@@ -2,7 +2,7 @@
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace inv3_backend.Controllers;
+namespace inv3_backend.Controllers.V1;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,7 +18,7 @@ public class OrdersController : ControllerBase
 
     // GET /orders
     [HttpGet]
-    public async Task<ActionResult<Order>> GetOrder([FromServices] IOrderData db)
+    public async Task<ActionResult<Order>> GetOrderV1([FromServices] IOrderData db)
     {
         _orderlogger.LogInformation("Orders > GetOrder controller executing...");
 
@@ -35,7 +35,7 @@ public class OrdersController : ControllerBase
     // GET /orders/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Order>> GetOneOrder([FromRoute] int id, [FromServices] IOrderData db)
+    public async Task<ActionResult<Order>> GetOneOrderV1([FromRoute] int id, [FromServices] IOrderData db)
     {
         _orderlogger.LogInformation("Orders > GetOneOrder controller executing...");
 
@@ -55,7 +55,7 @@ public class OrdersController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Order>> PostOrder([FromBody] Order order, [FromServices] IOrderData db)
+    public async Task<ActionResult<Order>> PostOrderV1([FromBody] Order order, [FromServices] IOrderData db)
     {
         _orderlogger.LogInformation("Orders > PostOrder controller executing...");
 
@@ -63,7 +63,7 @@ public class OrdersController : ControllerBase
         {
             if (order == null) return BadRequest(new ArgumentNullException("order was not provided"));
             var result = await db.CreateOrder(order);
-            return Created(nameof(GetOneOrder), result);
+            return Created(nameof(GetOneOrderV1), result);
         }
         catch (Exception exception)
         {
@@ -78,7 +78,7 @@ public class OrdersController : ControllerBase
     // PUT /orders/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Order>> PutOrder([FromRoute] int id, [FromBody] Order order, [FromServices] IOrderData db)
+    public async Task<ActionResult<Order>> PutOrderV1([FromRoute] int id, [FromBody] Order order, [FromServices] IOrderData db)
     {
         _orderlogger.LogInformation("Orders > PutOrder controller executing...");
 
@@ -98,7 +98,7 @@ public class OrdersController : ControllerBase
     // DELETE /orders/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Product>> DeleteOrder([FromRoute] int id, [FromServices] IOrderData db)
+    public async Task<ActionResult<Product>> DeleteOrderV1([FromRoute] int id, [FromServices] IOrderData db)
     {
         _orderlogger.LogInformation("Orders > DeleteOrder controller executing...");
 

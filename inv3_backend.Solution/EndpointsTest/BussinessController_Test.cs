@@ -2,7 +2,7 @@ using Moq;
 using Xunit;
 using FluentAssertions;
 using DataAccess.Data;
-using inv3_backend.Controllers;
+using inv3_backend.Controllers.V1;
 using Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +25,7 @@ public class BussinessController_Test
         var bussinessId = 2;
 
         // Act
-        var data = await _controller.GetOneBussiness(bussinessId);
+        var data = await _controller.GetOneBussinessV1(bussinessId);
 
         // Assert
         Assert.IsType<OkObjectResult>(data);
@@ -38,7 +38,7 @@ public class BussinessController_Test
         var bussinessId = 1;
 
         // Act
-        var data = await _controller.GetOneBussiness(bussinessId);
+        var data = await _controller.GetOneBussinessV1(bussinessId);
 
         // Assert
         Assert.IsType<NotFoundResult>(data);
@@ -61,7 +61,7 @@ public class BussinessController_Test
         _service.Setup(x => x.GetOneBussiness(bussinessId)).ReturnsAsync(bussinessModel);
 
         // Act
-        var data = await _controller.GetOneBussiness(bussinessId);
+        var data = await _controller.GetOneBussinessV1(bussinessId);
 
         // Assert
         Assert.IsType<OkObjectResult>(data);

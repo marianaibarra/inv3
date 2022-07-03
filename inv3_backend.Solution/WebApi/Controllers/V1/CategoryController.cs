@@ -2,7 +2,7 @@
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace inv3_backend.Controllers;
+namespace inv3_backend.Controllers.V1;
 
 [ApiController]
 [Route("api/[Controller]")]
@@ -18,7 +18,7 @@ public class CategoriesController : ControllerBase
 
     // GET /categories
     [HttpGet]
-    public async Task<ActionResult<Category>> GetCategories([FromServices] ICategoryData db)
+    public async Task<ActionResult<Category>> GetCategoriesV1([FromServices] ICategoryData db)
     {
         _categorylogger.LogInformation("Category > GetCategories controller executing...");
 
@@ -35,7 +35,7 @@ public class CategoriesController : ControllerBase
     // GET /categories/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Category>> GetOneCategory([FromRoute] int id, [FromServices] ICategoryData db)
+    public async Task<ActionResult<Category>> GetOneCategoryV1([FromRoute] int id, [FromServices] ICategoryData db)
     {
         _categorylogger.LogInformation("Categories > GetOneCategory controller executing...");
 
@@ -55,7 +55,7 @@ public class CategoriesController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Category>> PostCategory([FromBody] Category category, [FromServices] ICategoryData db)
+    public async Task<ActionResult<Category>> PostCategoryV1([FromBody] Category category, [FromServices] ICategoryData db)
     {
         _categorylogger.LogInformation("Categories > PostCategory controller executing...");
 
@@ -63,7 +63,7 @@ public class CategoriesController : ControllerBase
         {
             if (category == null) return BadRequest(new ArgumentNullException());
             var result = await db.CreateCategory(category);
-            return Created(nameof(GetOneCategory), result);
+            return Created(nameof(GetOneCategoryV1), result);
         }
         catch (Exception exception)
         {
@@ -78,7 +78,7 @@ public class CategoriesController : ControllerBase
     // PUT /categories/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Category>> PutCategory([FromRoute] int id, [FromBody] Category category, [FromServices] ICategoryData db)
+    public async Task<ActionResult<Category>> PutCategoryV1([FromRoute] int id, [FromBody] Category category, [FromServices] ICategoryData db)
     {
         _categorylogger.LogInformation("Categories > PutCategory controller executing...");
 
@@ -98,7 +98,7 @@ public class CategoriesController : ControllerBase
     // DELETE /categories/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Category>> DeleteCategory([FromRoute] int id, [FromServices] ICategoryData db)
+    public async Task<ActionResult<Category>> DeleteCategoryV1([FromRoute] int id, [FromServices] ICategoryData db)
     {
         _categorylogger.LogInformation("Categories > DeleteCategory controller executing...");
 

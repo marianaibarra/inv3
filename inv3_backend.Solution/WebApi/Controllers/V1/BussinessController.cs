@@ -2,7 +2,7 @@
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace inv3_backend.Controllers;
+namespace inv3_backend.Controllers.V1;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -21,7 +21,7 @@ public class BussinessController : ControllerBase
 
     // GET /bussiness
     [HttpGet]
-    public async Task<ActionResult<Bussiness>> GetBusinessses()
+    public async Task<ActionResult<Bussiness>> GetBusinesssesV1()
     {
         // _loggerBussiness.LogInformation("Bussiness > GetBusinessses controller executing...");
 
@@ -38,7 +38,7 @@ public class BussinessController : ControllerBase
     // GET /bussiness/{id}
 
     [HttpGet("{id}", Name = "GetOneBussiness")]
-    public async Task<ActionResult<Bussiness>> GetOneBussiness([FromRoute] int id)
+    public async Task<ActionResult<Bussiness>> GetOneBussinessV1([FromRoute] int id)
     {
         // _loggerBussiness.LogInformation("Bussiness > GetOneBussiness controller executing...");
 
@@ -77,7 +77,7 @@ public class BussinessController : ControllerBase
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Bussiness>> PostBussiness([FromBody] Bussiness bussiness)
+    public async Task<ActionResult<Bussiness>> PostBussinessV1([FromBody] Bussiness bussiness)
     {
         // _loggerBussiness.LogInformation("Bussiness > PostBussiness controller executing...");
 
@@ -85,7 +85,7 @@ public class BussinessController : ControllerBase
         {
             if (bussiness == null) return BadRequest(new ArgumentNullException());
             var result = await _db.CreateBussiness(bussiness);
-            return Created(nameof(GetOneBussiness), result);
+            return Created(nameof(GetOneBussinessV1), result);
         }
         catch (Exception exception)
         {
@@ -100,7 +100,7 @@ public class BussinessController : ControllerBase
     // PUT /bussiness/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Bussiness>> PutBussiness([FromRoute] int id, [FromBody] Bussiness bussiness)
+    public async Task<ActionResult<Bussiness>> PutBussinessV1([FromRoute] int id, [FromBody] Bussiness bussiness)
     {
         // _loggerBussiness.LogInformation("Bussiness > PutBussiness controller executing...");
 
@@ -124,7 +124,7 @@ public class BussinessController : ControllerBase
     /// <param name="id"></param>
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Bussiness>> DeleteBussiness([FromRoute] int id)
+    public async Task<ActionResult<Bussiness>> DeleteBussinessV1([FromRoute] int id)
     {
         // _loggerBussiness.LogInformation("Bussinesss > DeleteBussiness controller executing...");
 

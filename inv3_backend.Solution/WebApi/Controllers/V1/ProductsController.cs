@@ -2,7 +2,7 @@
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace inv3_backend.Controllers;
+namespace inv3_backend.Controllers.V1;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,7 +18,7 @@ public class ProductsController : ControllerBase
 
     // GET /products
     [HttpGet]
-    public async Task<ActionResult<Product>> GetProducts([FromServices] IProductData db)
+    public async Task<ActionResult<Product>> GetProductsV1([FromServices] IProductData db)
     {
         _loggerProduct.LogInformation("Products > GetProducts controller executing...");
 
@@ -35,7 +35,7 @@ public class ProductsController : ControllerBase
     // GET /products/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Product>> GetOneProduct([FromRoute] int id, [FromServices] IProductData db)
+    public async Task<ActionResult<Product>> GetOneProductV1([FromRoute] int id, [FromServices] IProductData db)
     {
         _loggerProduct.LogInformation("Products > GetOneProduct controller executing...");
 
@@ -55,7 +55,7 @@ public class ProductsController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Product>> PostProduct([FromBody] Product product, [FromServices] IProductData db)
+    public async Task<ActionResult<Product>> PostProductV1([FromBody] Product product, [FromServices] IProductData db)
     {
         _loggerProduct.LogInformation("Products > PostProduct controller executing...");
 
@@ -63,7 +63,7 @@ public class ProductsController : ControllerBase
         {
             if (product == null) return BadRequest(new ArgumentNullException());
             var result = await db.CreateProduct(product);
-            return Created(nameof(GetOneProduct), result);
+            return Created(nameof(GetOneProductV1), result);
         }
         catch (Exception exception)
         {
@@ -79,7 +79,7 @@ public class ProductsController : ControllerBase
 
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Product>> PutProduct([FromRoute] int id, [FromBody] Product product, [FromServices] IProductData db)
+    public async Task<ActionResult<Product>> PutProductV1([FromRoute] int id, [FromBody] Product product, [FromServices] IProductData db)
     {
         _loggerProduct.LogInformation("Products > PutProduct controller executing...");
 
@@ -99,7 +99,7 @@ public class ProductsController : ControllerBase
     // DELETE /products/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Product>> DeleteProduct([FromRoute] int id, [FromServices] IProductData db)
+    public async Task<ActionResult<Product>> DeleteProductV1([FromRoute] int id, [FromServices] IProductData db)
     {
         _loggerProduct.LogInformation("Products > DeleteProduct controller executing...");
 

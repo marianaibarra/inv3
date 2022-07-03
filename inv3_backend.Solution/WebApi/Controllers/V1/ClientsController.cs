@@ -2,7 +2,7 @@
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace inv3_backend.Controllers;
+namespace inv3_backend.Controllers.V1;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,7 +18,7 @@ public class ClientsController : ControllerBase
 
     // GET /clients
     [HttpGet]
-    public async Task<ActionResult<Client>> GetClients([FromServices] IClientData db)
+    public async Task<ActionResult<Client>> GetClientsV1([FromServices] IClientData db)
     {
         _clientslogger.LogInformation("Clients > GetClients controller executing...");
 
@@ -35,7 +35,7 @@ public class ClientsController : ControllerBase
     // GET /clients/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Client>> GetOneClient([FromRoute] int id, [FromServices] IClientData db)
+    public async Task<ActionResult<Client>> GetOneClientV1([FromRoute] int id, [FromServices] IClientData db)
     {
         _clientslogger.LogInformation("Clients > GetOneClient controller executing...");
 
@@ -55,7 +55,7 @@ public class ClientsController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Client>> PostClient([FromBody] Client client, [FromServices] IClientData db)
+    public async Task<ActionResult<Client>> PostClientV1([FromBody] Client client, [FromServices] IClientData db)
     {
         _clientslogger.LogInformation("Clients > PostClient controller executing...");
 
@@ -63,7 +63,7 @@ public class ClientsController : ControllerBase
         {
             if (client == null) return BadRequest(new ArgumentNullException("client was not provided"));
             var result = await db.CreateClient(client);
-            return Created(nameof(GetOneClient), result);
+            return Created(nameof(GetOneClientV1), result);
         }
         catch (Exception exception)
         {
@@ -78,7 +78,7 @@ public class ClientsController : ControllerBase
     // PUT /clients/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Client>> PutClient([FromRoute] int id, [FromBody] Client client, [FromServices] IClientData db)
+    public async Task<ActionResult<Client>> PutClientV1([FromRoute] int id, [FromBody] Client client, [FromServices] IClientData db)
     {
         _clientslogger.LogInformation("Clients > PutClient controller executing...");
 
@@ -98,7 +98,7 @@ public class ClientsController : ControllerBase
     // DELETE /clients/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Client>> DeleteClient([FromRoute] int id, [FromServices] IClientData db)
+    public async Task<ActionResult<Client>> DeleteClientV1([FromRoute] int id, [FromServices] IClientData db)
     {
         _clientslogger.LogInformation("Clients > DeleteClient controller executing...");
 

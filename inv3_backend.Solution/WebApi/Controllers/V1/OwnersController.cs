@@ -1,7 +1,7 @@
 using Core.Models;
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
-
+namespace inv3_backend.Controllers.V1;
 [ApiController]
 [Route("api/[Controller]")]
 [ApiVersion("1.0")]
@@ -18,7 +18,7 @@ public class OwnersController : ControllerBase
 
     // GET /owners
     [HttpGet]
-    public async Task<ActionResult<Owner>> GetOwners()
+    public async Task<ActionResult<Owner>> GetOwnersV1()
     {
         _ownerslogger.LogInformation("Owners > GetOwners controller executing...");
 
@@ -35,7 +35,7 @@ public class OwnersController : ControllerBase
     // GET /owners/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Owner>> GetOneOwner([FromRoute] int id)
+    public async Task<ActionResult<Owner>> GetOneOwnerV1([FromRoute] int id)
     {
         _ownerslogger.LogInformation("Owners > GetOneOwner controller executing...");
 
@@ -55,7 +55,7 @@ public class OwnersController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Owner>> PostOwner([FromBody] Owner owner)
+    public async Task<ActionResult<Owner>> PostOwnerV1([FromBody] Owner owner)
     {
         _ownerslogger.LogInformation("Owners > PostOwner controller executing...");
 
@@ -63,7 +63,7 @@ public class OwnersController : ControllerBase
         {
             if (owner == null) return BadRequest(new ArgumentNullException("owner was not provided"));
             var result = await _db.CreateOwner(owner);
-            return Created(nameof(GetOneOwner), result);
+            return Created(nameof(GetOneOwnerV1), result);
         }
         catch (Exception exception)
         {
@@ -78,7 +78,7 @@ public class OwnersController : ControllerBase
     // PUT /owners/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Owner>> PutOwner([FromRoute] int id, [FromBody] Owner owner)
+    public async Task<ActionResult<Owner>> PutOwnerV1([FromRoute] int id, [FromBody] Owner owner)
     {
         _ownerslogger.LogInformation("Owners > PutOwner controller executing...");
 
@@ -98,7 +98,7 @@ public class OwnersController : ControllerBase
     // DELETE /owners/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Owner>> DeleteOwner([FromRoute] int id)
+    public async Task<ActionResult<Owner>> DeleteOwnerV1([FromRoute] int id)
     {
         _ownerslogger.LogInformation("Owners > DeleteOwner controller executing...");
 

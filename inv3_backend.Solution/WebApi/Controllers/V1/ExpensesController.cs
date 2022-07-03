@@ -2,7 +2,7 @@
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace inv3_backend.Controllers;
+namespace inv3_backend.Controllers.V1;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,7 +18,7 @@ public class ExpensesController : ControllerBase
 
     // GET /expenses
     [HttpGet]
-    public async Task<ActionResult<Expense>> GetExpenses([FromServices] IExpenseData db)
+    public async Task<ActionResult<Expense>> GetExpensesV1([FromServices] IExpenseData db)
     {
         _expenseslogger.LogInformation("Expenses > GetExpenses controller executing...");
 
@@ -35,7 +35,7 @@ public class ExpensesController : ControllerBase
     // GET /expenses/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Expense>> GetOneExpense([FromRoute] int id, [FromServices] IExpenseData db)
+    public async Task<ActionResult<Expense>> GetOneExpenseV1([FromRoute] int id, [FromServices] IExpenseData db)
     {
         _expenseslogger.LogInformation("Expenses > GetOneExpense controller executing...");
 
@@ -55,7 +55,7 @@ public class ExpensesController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Expense>> PostExpense([FromBody] Expense expense, [FromServices] IExpenseData db)
+    public async Task<ActionResult<Expense>> PostExpenseV1([FromBody] Expense expense, [FromServices] IExpenseData db)
     {
         _expenseslogger.LogInformation("Expenses > PostExpense controller executing...");
 
@@ -63,7 +63,7 @@ public class ExpensesController : ControllerBase
         {
             if (expense == null) return BadRequest(new ArgumentNullException("expense was not provided"));
             var result = await db.CreateExpense(expense);
-            return Created(nameof(GetOneExpense), result);
+            return Created(nameof(GetOneExpenseV1), result);
         }
         catch (Exception exception)
         {
@@ -78,7 +78,7 @@ public class ExpensesController : ControllerBase
     // PUT /expenses/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Expense>> PutExpense([FromRoute] int id, [FromBody] Expense expense, [FromServices] IExpenseData db)
+    public async Task<ActionResult<Expense>> PutExpenseV1([FromRoute] int id, [FromBody] Expense expense, [FromServices] IExpenseData db)
     {
         _expenseslogger.LogInformation("Expeneses > PutExpense controller executing...");
 
@@ -98,7 +98,7 @@ public class ExpensesController : ControllerBase
     // DELETE /expenses/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Expense>> DeleteExpense([FromRoute] int id, [FromServices] IExpenseData db)
+    public async Task<ActionResult<Expense>> DeleteExpenseV1([FromRoute] int id, [FromServices] IExpenseData db)
     {
         _expenseslogger.LogInformation("Expenses > DeleteExpense controller executing...");
 

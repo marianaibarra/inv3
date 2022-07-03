@@ -2,7 +2,7 @@ using Core.Models;
 using DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace inv3_backend.Controllers;
+namespace inv3_backend.Controllers.V1;
 
 [ApiController]
 [Route("api/[Controller]")]
@@ -18,7 +18,7 @@ public class ProvidersController : ControllerBase
 
     // GET /providers
     [HttpGet]
-    public async Task<ActionResult<Provider>> GetProviders([FromServices] IProviderData db)
+    public async Task<ActionResult<Provider>> GetProvidersV1([FromServices] IProviderData db)
     {
         _providerlogger.LogInformation("Providers > GetProvider controller executing...");
 
@@ -35,7 +35,7 @@ public class ProvidersController : ControllerBase
 
     // GET /providers/{id}
     [HttpGet("{id}")]
-    public async Task<ActionResult<Provider>> GetOneProvider([FromRoute] int id, IProviderData db)
+    public async Task<ActionResult<Provider>> GetOneProviderV1([FromRoute] int id, IProviderData db)
     {
         _providerlogger.LogInformation("Providers > GetOneProvider controller executing...");
 
@@ -55,7 +55,7 @@ public class ProvidersController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<Provider>> PostProvider([FromBody] Provider provider, [FromServices] IProviderData db)
+    public async Task<ActionResult<Provider>> PostProviderV1([FromBody] Provider provider, [FromServices] IProviderData db)
     {
         _providerlogger.LogInformation("Providers > PostProvider controller executing...");
 
@@ -63,7 +63,7 @@ public class ProvidersController : ControllerBase
         {
             if (provider == null) return BadRequest(new ArgumentNullException("provider was not provided"));
             var result = await db.CreateProvider(provider);
-            return Created(nameof(GetOneProvider), result);
+            return Created(nameof(GetOneProviderV1), result);
         }
         catch (Exception exception)
         {
@@ -78,7 +78,7 @@ public class ProvidersController : ControllerBase
     // PUT /providers/{id}
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Provider>> PutProvider([FromRoute] int id, [FromBody] Provider provider, [FromServices] IProviderData db)
+    public async Task<ActionResult<Provider>> PutProviderV1([FromRoute] int id, [FromBody] Provider provider, [FromServices] IProviderData db)
     {
         _providerlogger.LogInformation("Providers > PutProvider controller executing...");
 
@@ -98,7 +98,7 @@ public class ProvidersController : ControllerBase
     // DELETE /providers/{id}
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<Provider>> DeleteProvider([FromRoute] int id, [FromServices] IProviderData db)
+    public async Task<ActionResult<Provider>> DeleteProviderV1([FromRoute] int id, [FromServices] IProviderData db)
     {
         _providerlogger.LogInformation("Providers > DeleteProvider controller executing...");
 
